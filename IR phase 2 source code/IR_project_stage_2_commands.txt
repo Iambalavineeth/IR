@@ -1,0 +1,25 @@
+qsub -I -l select=5:ncpus=5:mem=8gb,walltime=24:00:00
+export HADOOP_HOME=$HOME/Hadoop-stack/hadoop-1.2.1
+export PATH=$HADOOP_HOME/bin:$PATH
+export PATH=$HOME/Hadoop-stack/myhadoop-0.30b/bin:$PATH
+export HADOOP_CONF_DIR=$HOME/Hadoop-stack/config-$PBS_JOBID
+myhadoop-configure.sh -c $HADOOP_CONF_DIR -s /home/ukancha/$PBS_JOBID -n 10
+$HADOOP_HOME/bin/start-all.sh
+hadoop fs -mkdir -ukanchan25 /user/hduser/input1
+hadoop fs -put /home/ukancha/data/*.zip  /user/hduser/input1
+hadoop jar uniwordIndex.jar /user/hduser/input1 uniwordOPlmt2
+hadoop fs -get uniwordOPlmt2 FinalOP
+
+hadoop fs -put /home/ukancha/FinalOP/uniwordOPlmt2/uniwordI  /user/hduser/input3
+
+
+
+ hadoop fs  -cat output41/*00
+ hadoop fs  -cat uniwordOPlmt/*00
+
+hadoop jar RankedIR1.jar /user/hduser/input1 RROUT6 "civic Honda"
+
+
+Orders for costly manufactured goods staged a broad-based surge in July
+
+
