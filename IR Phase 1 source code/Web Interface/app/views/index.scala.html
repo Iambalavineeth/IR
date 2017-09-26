@@ -1,0 +1,28 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(form: Form[String])
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Hello") {
+ <form method="POST" action="/arg">
+  <p>Please enter the argument.</p>
+  <input type="text" name="arg" />
+  <!--<p>Please enter the remote file path to search</p>-->
+  <!--<input type="text" name="path" />-->
+  <input type="submit"/>
+ </form>
+ <div>
+  @if(form.hasErrors) {
+    <p>Errors</p>
+    @for(error <- form.errors) {
+     <p>@{error.message}</p>
+    }
+  }
+ </div>
+}
