@@ -1,13 +1,15 @@
 # Information Retrieval
 
 ## Details:
-This was a part of my Information Retrieval Course that I have taken in the Spring 2018 Semester. In this course our main tasks were to build a Google look-alike XML document searcher. A User can just input a string or group of strings, the search engine gives back the relevant XML documents that have those strings.
+This was a part of my Information Retrieval Course that I have taken in the Spring 2018 Semester. In this course our main tasks were to build a Google look-alike XML document searcher. A User can just input a string or group of strings, the search engine gives back the relevant XML documents which have those strings.
 
 ## Technologies:
 1. Java
 2. Hadoop
 3. Django (Web-Interface)
 
+
+## Phases:
 * __Phase One__: Intitially, created a basic search engine which goes through all the XML files parses the relevant content information. Here content is Indexed in 3 different ways: _Uniword Indexing_, _Bi-word Indexing_ and _Postional Indexing_.
   *	Uniword Indexing: In this, the files gives us the list of words/tokens that have occurred in the input data set and their corresponding                       frequencies. The output of the uniword indexing is a text document which is in the form of key-value pairs.
   * Bi-word Indexing: This indexing of the input files gives us the list of bigram words which occur side-by-side or consecutively and                           their frequencies. After the indexing, we will be having key-value pairs of bi-wordsand their frequencies.  
